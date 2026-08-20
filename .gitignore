@@ -1,0 +1,56 @@
+# SecureScore — Root .gitignore
+
+# ============ SECRETS (NEVER COMMIT) ============
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# ============ BACKEND (Spring Boot / Maven) ============
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/**/*.class
+backend/hs_err_pid*
+
+# ============ FRONTEND (Next.js / Node) ============
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ============ IDE / OS ============
+.idea/
+.vscode/settings.json
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+*.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ============ LOGS ============
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============ MISC ============
+*.swp
+*.swo
+*~
+.cache/
+dist/

@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --crimson: #DC143C;
+  --crimson-dark: #B91C1C;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Code blocks */
+pre, code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid #DC143C;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Transition defaults */
+* {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Scan progress animation */
+@keyframes scanPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.scan-pulse {
+  animation: scanPulse 1.5s ease-in-out infinite;
+}
+
+/* Severity colors as CSS custom properties */
+.severity-critical, .severity-high {
+  --severity-color: #DC2626;
+  --severity-bg: #FEF2F2;
+  --severity-border: #FECACA;
+}
+.severity-medium {
+  --severity-color: #D97706;
+  --severity-bg: #FFFBEB;
+  --severity-border: #FDE68A;
+}
+.severity-low {
+  --severity-color: #CA8A04;
+  --severity-bg: #FEFCE8;
+  --severity-border: #FEF08A;
+}
+.severity-pass {
+  --severity-color: #16A34A;
+  --severity-bg: #F0FDF4;
+  --severity-border: #BBF7D0;
+}
+.severity-unknown {
+  --severity-color: #6B7280;
+  --severity-bg: #F9FAFB;
+  --severity-border: #E5E7EB;
+}
+
+/* Crimson button */
+.bg-crimson { background-color: #DC143C; }
+.bg-crimson:hover { background-color: #B91C1C; }
+.bg-crimson-dark { background-color: #B91C1C; }
+.text-crimson { color: #DC143C; }
+.border-crimson { border-color: #DC143C; }
+.focus\:border-crimson:focus { border-color: #DC143C; }
+.ring-crimson { --tw-ring-color: #DC143C; }
